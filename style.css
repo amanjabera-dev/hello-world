@@ -1,0 +1,169 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 1.25rem;
+	background:
+		radial-gradient(circle at 14% 22%, rgba(255, 255, 255, 0.62) 0, rgba(255, 255, 255, 0) 34%),
+		radial-gradient(circle at 84% 74%, rgba(211, 188, 161, 0.21) 0, rgba(211, 188, 161, 0) 48%),
+		linear-gradient(155deg, #eee1d2 0%, #f6ede2 38%, #e6d6c5 100%);
+	color: #3f362f;
+	font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.card {
+	position: relative;
+	isolation: isolate;
+	overflow: visible;
+	max-width: 42rem;
+	width: min(100%, 42rem);
+	padding: 3.7rem 4rem 3.15rem 3.35rem;
+	background:
+		linear-gradient(175deg, rgba(255, 255, 255, 0.86), rgba(255, 253, 248, 0.98)),
+		repeating-linear-gradient(0deg, rgba(150, 117, 89, 0.03) 0, rgba(150, 117, 89, 0.03) 1px, rgba(255, 255, 255, 0.03) 1px, rgba(255, 255, 255, 0.03) 4px);
+	border: 1px solid rgba(166, 130, 95, 0.34);
+	box-shadow:
+		0 24px 42px rgba(92, 69, 45, 0.17),
+		0 2px 0 rgba(255, 255, 255, 0.92) inset,
+		0 -1px 0 rgba(170, 137, 103, 0.11) inset;
+	text-align: center;
+}
+
+.card::before,
+.card::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	pointer-events: none;
+	background-image: url("./assets/floral-stem.webm");
+	background-repeat: no-repeat;
+	background-size: contain;
+	filter: saturate(0.75) sepia(0.2);
+}
+
+.card::before {
+	width: clamp(16rem, 36vw, 25rem);
+	height: clamp(21rem, 52vw, 33rem);
+	top: -2.8rem;
+	left: -8.2rem;
+	opacity: 0.17;
+	transform: rotate(-18deg);
+	background-position: left top;
+}
+
+.card::after {
+	width: clamp(12rem, 27vw, 19rem);
+	height: clamp(16rem, 37vw, 25rem);
+	right: -5.7rem;
+	bottom: -4.7rem;
+	opacity: 0.1;
+	transform: rotate(20deg);
+	background-position: right bottom;
+}
+
+.card > * {
+	position: relative;
+	z-index: 2;
+}
+
+.ornament {
+	margin: 0 0 1.1rem;
+	font-size: 1.08rem;
+	letter-spacing: 0.43em;
+	color: #967553;
+}
+
+h1 {
+	margin: 0 0 0.55rem;
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-size: clamp(1.25rem, 2.9vw, 1.56rem);
+	font-weight: 400;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: #45362b;
+}
+
+.subtitle {
+	margin: 0 0 1.95rem;
+	font-size: clamp(1.08rem, 2.55vw, 1.24rem);
+	font-style: italic;
+	color: #6f5d4e;
+}
+
+.names {
+	margin: 0;
+	font-family: "Great Vibes", "Times New Roman", cursive;
+	font-size: clamp(2.75rem, 8.4vw, 4.15rem);
+	font-weight: 400;
+	line-height: 1.06;
+	letter-spacing: 0.015em;
+	color: #423328;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.and {
+	display: block;
+	margin: 0.25rem 0 0.38rem;
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-size: 1.1rem;
+	font-style: italic;
+	color: #7e6855;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	margin: 1.5rem 4.8rem 1.35rem 3.2rem;
+	background: linear-gradient(90deg, rgba(173, 141, 109, 0), rgba(173, 141, 109, 0.67), rgba(173, 141, 109, 0.09));
+}
+
+.detail {
+	margin: 0.4rem 0;
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-size: clamp(1rem, 2.2vw, 1.13rem);
+	line-height: 1.67;
+	color: #4f3f33;
+}
+
+.date {
+	margin-top: 0.55rem;
+	font-size: clamp(1.2rem, 2.7vw, 1.4rem);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: #3f3127;
+}
+
+.footer {
+	margin-top: 1.95rem;
+	font-size: 1rem;
+	font-style: italic;
+	color: #7a6251;
+}
+
+@media (max-width: 760px) {
+	.card {
+		padding: 3rem 2rem 2.5rem 1.7rem;
+	}
+
+	.card::before {
+		left: -7.2rem;
+		top: -2.1rem;
+		opacity: 0.14;
+	}
+
+	.card::after {
+		right: -4.6rem;
+		bottom: -3.8rem;
+		opacity: 0.08;
+	}
+
+	hr {
+		margin: 1.35rem 1.9rem 1.3rem 1.05rem;
+	}
+}
